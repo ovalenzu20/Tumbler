@@ -14,6 +14,7 @@
 		787315A22125AA66003D5529 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787315A12125AA66003D5529 /* PhotosViewController.swift */; };
 		787315A52125AAF9003D5529 /* TumblerApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787315A42125AAF9003D5529 /* TumblerApiManager.swift */; };
 		787315A72125AB96003D5529 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787315A62125AB96003D5529 /* Photo.swift */; };
+		787315A92125B326003D5529 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787315A82125B326003D5529 /* PhotoCell.swift */; };
 		B3EA1A155DDD9364F83E822D /* Pods_Tumbler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F023FCDDA8ADFCCB33339732 /* Pods_Tumbler.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		787315A12125AA66003D5529 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		787315A42125AAF9003D5529 /* TumblerApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TumblerApiManager.swift; sourceTree = "<group>"; };
 		787315A62125AB96003D5529 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		787315A82125B326003D5529 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		9058F92133076BD40A22B256 /* Pods-Tumbler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tumbler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tumbler/Pods-Tumbler.release.xcconfig"; sourceTree = "<group>"; };
 		F023FCDDA8ADFCCB33339732 /* Pods_Tumbler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tumbler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -65,13 +67,14 @@
 		7873158D2125A65E003D5529 /* Tumbler */ = {
 			isa = PBXGroup;
 			children = (
+				787315AA2125B332003D5529 /* Views */,
 				787315A32125AAE7003D5529 /* Models */,
 				7873158E2125A65E003D5529 /* AppDelegate.swift */,
 				787315922125A65E003D5529 /* Main.storyboard */,
 				787315952125A65F003D5529 /* Assets.xcassets */,
 				787315972125A65F003D5529 /* LaunchScreen.storyboard */,
 				7873159A2125A65F003D5529 /* Info.plist */,
-				787315A12125AA66003D5529 /* PhotosViewController.swift */,
+				787315A82125B326003D5529 /* PhotoCell.swift */,
 			);
 			path = Tumbler;
 			sourceTree = "<group>";
@@ -83,6 +86,14 @@
 				787315A62125AB96003D5529 /* Photo.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		787315AA2125B332003D5529 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				787315A12125AA66003D5529 /* PhotosViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A038B73E8D6746B61DEB3979 /* Pods */ = {
@@ -217,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				787315A72125AB96003D5529 /* Photo.swift in Sources */,
+				787315A92125B326003D5529 /* PhotoCell.swift in Sources */,
 				7873158F2125A65E003D5529 /* AppDelegate.swift in Sources */,
 				787315A52125AAF9003D5529 /* TumblerApiManager.swift in Sources */,
 				787315A22125AA66003D5529 /* PhotosViewController.swift in Sources */,
