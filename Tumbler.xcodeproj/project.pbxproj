@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7873158F2125A65E003D5529 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7873158E2125A65E003D5529 /* AppDelegate.swift */; };
-		787315912125A65E003D5529 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787315902125A65E003D5529 /* ViewController.swift */; };
 		787315942125A65E003D5529 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 787315922125A65E003D5529 /* Main.storyboard */; };
 		787315962125A65F003D5529 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 787315952125A65F003D5529 /* Assets.xcassets */; };
 		787315992125A65F003D5529 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 787315972125A65F003D5529 /* LaunchScreen.storyboard */; };
+		787315A22125AA66003D5529 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787315A12125AA66003D5529 /* PhotosViewController.swift */; };
+		787315A52125AAF9003D5529 /* TumblerApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787315A42125AAF9003D5529 /* TumblerApiManager.swift */; };
+		787315A72125AB96003D5529 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787315A62125AB96003D5529 /* Photo.swift */; };
 		B3EA1A155DDD9364F83E822D /* Pods_Tumbler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F023FCDDA8ADFCCB33339732 /* Pods_Tumbler.framework */; };
 /* End PBXBuildFile section */
 
@@ -19,11 +21,13 @@
 		55B208C508912B5B43AFC3AB /* Pods-Tumbler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tumbler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tumbler/Pods-Tumbler.debug.xcconfig"; sourceTree = "<group>"; };
 		7873158B2125A65E003D5529 /* Tumbler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tumbler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7873158E2125A65E003D5529 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		787315902125A65E003D5529 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		787315932125A65E003D5529 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		787315952125A65F003D5529 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		787315982125A65F003D5529 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7873159A2125A65F003D5529 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		787315A12125AA66003D5529 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		787315A42125AAF9003D5529 /* TumblerApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TumblerApiManager.swift; sourceTree = "<group>"; };
+		787315A62125AB96003D5529 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		9058F92133076BD40A22B256 /* Pods-Tumbler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tumbler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tumbler/Pods-Tumbler.release.xcconfig"; sourceTree = "<group>"; };
 		F023FCDDA8ADFCCB33339732 /* Pods_Tumbler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tumbler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -61,14 +65,24 @@
 		7873158D2125A65E003D5529 /* Tumbler */ = {
 			isa = PBXGroup;
 			children = (
+				787315A32125AAE7003D5529 /* Models */,
 				7873158E2125A65E003D5529 /* AppDelegate.swift */,
-				787315902125A65E003D5529 /* ViewController.swift */,
 				787315922125A65E003D5529 /* Main.storyboard */,
 				787315952125A65F003D5529 /* Assets.xcassets */,
 				787315972125A65F003D5529 /* LaunchScreen.storyboard */,
 				7873159A2125A65F003D5529 /* Info.plist */,
+				787315A12125AA66003D5529 /* PhotosViewController.swift */,
 			);
 			path = Tumbler;
+			sourceTree = "<group>";
+		};
+		787315A32125AAE7003D5529 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				787315A42125AAF9003D5529 /* TumblerApiManager.swift */,
+				787315A62125AB96003D5529 /* Photo.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A038B73E8D6746B61DEB3979 /* Pods */ = {
@@ -202,8 +216,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				787315912125A65E003D5529 /* ViewController.swift in Sources */,
+				787315A72125AB96003D5529 /* Photo.swift in Sources */,
 				7873158F2125A65E003D5529 /* AppDelegate.swift in Sources */,
+				787315A52125AAF9003D5529 /* TumblerApiManager.swift in Sources */,
+				787315A22125AA66003D5529 /* PhotosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
