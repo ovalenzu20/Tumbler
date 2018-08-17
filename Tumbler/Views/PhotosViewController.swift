@@ -50,7 +50,16 @@ class PhotosViewController: UIViewController, UITableViewDataSource{
     
     func fetchPosts(){
         TumblerApiManager().tumblerPhotoPosts{ (posts: [[String : Any]]?, error: Error?) in
-            if let posts = posts {
+            if let error = error {
+                let alertController = UIAlertController(title: "Cannot get posts", message: "The internet connection appears to be off", preferredStyle: .alert)
+                let tryAgain = UIAlertAction(title: "Try Again", style: .default) { (action) in
+                    self.fetchPosts()
+                }
+                
+                alertController.addAction(tryAgain)
+                self.present(alertController, animated: true)
+            }
+            else if let posts = posts {
                 self.posts = posts
                 self.tableView.reloadData()
             }
