@@ -12,17 +12,21 @@ class PhotosViewController: UIViewController, UITableViewDataSource{
 
     var refreshControl : UIRefreshControl!
     @IBOutlet weak var tableView: UITableView!
-    var photos: [Photo] = []
+    var posts: [[String : Any]] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return photos.count
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let photoCell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
-        let photo = photos[indexPath.row]
+        let post = posts[indexPath.row]
+        let photosDictionary = post["photos"] as! [[String : Any]]
+        let photoDictionary = photosDictionary[0]
+        let photo = Photo(dictionary: photoDictionary)
         photoCell.photo = photo
-
+        photoCell.setupViews()
+        
         return photoCell
     }
     
@@ -45,9 +49,9 @@ class PhotosViewController: UIViewController, UITableViewDataSource{
     
     
     func fetchPosts(){
-        TumblerApiManager().tumblerPhotoPosts{ (photos: [Photo]?, error: Error?) in
-            if let photos = photos {
-                self.photos = photos
+        TumblerApiManager().tumblerPhotoPosts{ (posts: [[String : Any]]?, error: Error?) in
+            if let posts = posts {
+                self.posts = posts
                 self.tableView.reloadData()
             }
         }
